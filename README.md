@@ -56,13 +56,6 @@ Best data version for each model, on the test set:
 - **Business value:** using LightGBM, the bank could reach **98% of churners by contacting just 20% of its customers**, with a lift of 4.9 at the second decile. Logistic Regression reaches 72% of churners for the same effort.
 - **Threshold tuning on Logistic Regression:** the optimal cut-off from the ROC curve raised recall from 0.56 to 0.82, while precision fell from 0.78 to 0.56.
 
-## Lessons learned
-
-- Tree-based models (Random Forest, CatBoost and XGBoost) don't need feature scaling. Random Forest and XGBoost prefer label encoding, while CatBoost prefers one-hot encoding.
-- LightGBM and Logistic Regression did benefit from scaling. For this data, standard scaling worked best.
-- **High accuracy doesn't guarantee business value.** Some models with strong metrics had poor gain curves.
-- Choose the metric that fits the business. If the retention budget is low, focus on precision, gain and lift. If losing any customer is costly, focus on recall.
-
 ## Tech stack
 
 Python · pandas · NumPy · SciPy · Matplotlib · Seaborn · scikit-learn · CatBoost · XGBoost · LightGBM · kds
